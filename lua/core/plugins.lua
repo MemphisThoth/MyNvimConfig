@@ -58,6 +58,39 @@ require("lazy").setup({
     })
   end,
 },
+{
+  "nvim-tree/nvim-tree.lua",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
+  config = function()
+    require("nvim-tree").setup({
+      view = {
+        width = 30,
+        side = "left",
+        preserve_window_proportions = true,
+      },
+      renderer = {
+        highlight_git = true,
+        icons = {
+          show = {
+            file = true,
+            folder = true,
+            folder_arrow = true,
+            git = true,
+          },
+        },
+      },
+      filters = {
+        dotfiles = false,
+        custom = { ".DS_Store", "thumbs.db" },
+      },
+      git = {
+        enable = true,
+        ignore = false,
+      },
+    })
+  end,
+}
+
 
   -- Add more plugins here
 })
