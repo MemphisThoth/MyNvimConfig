@@ -44,6 +44,11 @@ local servers = {
       },
     },
   },
+markdown = {
+  cmd = { vim.fn.stdpath("data") .. "/mason/bin/marksman" },
+  filetypes = { "markdown" },
+}
+
 }
 
 for server, config in pairs(servers) do

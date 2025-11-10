@@ -223,8 +223,23 @@ require("lazy").setup({
   dependencies = { "nvim-lua/plenary.nvim" },
   config = true,
 },
-
-
+{
+  "NvChad/nvim-colorizer.lua",
+  config = function()
+    require("colorizer").setup({
+      filetypes = { "*" },
+      user_default_options = {
+        RGB = true,
+        RRGGBB = true,
+        names = true,
+        css = true,
+        tailwind = true,
+        sass = { enable = true, parsers = { "css" } },
+        mode = "background", -- or "foreground" for colored text
+      },
+    })
+  end,
+}
 
 
 })
