@@ -9,6 +9,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    { "nvim-lualine/lualine.nvim" },
+    { "nvim-tree/nvim-web-devicons" },
   -- Add more plugins here
 })
 
