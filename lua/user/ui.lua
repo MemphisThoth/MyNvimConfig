@@ -16,3 +16,4 @@ require("lualine").setup({
   },
 })
 
+require("nvim-treesitter.configs").setup({})

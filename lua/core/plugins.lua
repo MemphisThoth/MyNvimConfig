@@ -24,7 +24,40 @@ require("lazy").setup({
       ensure_installed = { "lua_ls", "pyright", "tsserver" }, -- Add your servers here
     })
   end,
-}
+},
+{
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  config = function()
+    require("nvim-treesitter.configs").setup({
+      ensure_installed = {
+        "lua", "python", "javascript", "typescript", "bash", "json", "yaml", "markdown"
+      },
+      highlight = { enable = true },
+      indent = { enable = true },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "gnn",
+          node_incremental = "grn",
+          node_decremental = "grm",
+        },
+      },
+      textobjects = {
+        select = {
+          enable = true,
+          lookahead = true,
+          keymaps = {
+            ["af"] = "@function.outer",
+            ["if"] = "@function.inner",
+            ["ac"] = "@class.outer",
+            ["ic"] = "@class.inner",
+          },
+        },
+      },
+    })
+  end,
+},
 
   -- Add more plugins here
 })
