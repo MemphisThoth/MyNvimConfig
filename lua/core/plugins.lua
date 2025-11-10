@@ -11,6 +11,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     { "nvim-lualine/lualine.nvim" },
     { "nvim-tree/nvim-web-devicons" },
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
   -- Add more plugins here
 })
 
