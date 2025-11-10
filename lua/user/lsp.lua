@@ -47,7 +47,31 @@ local servers = {
 markdown = {
   cmd = { vim.fn.stdpath("data") .. "/mason/bin/marksman" },
   filetypes = { "markdown" },
+},
+tailwindcss = {
+  cmd = { vim.fn.stdpath("data") .. "/mason/bin/tailwindcss-language-server" },
+  filetypes = { "html", "css", "javascript", "javascriptreact", "typescriptreact", "markdown" },
+  settings = {
+    tailwindCSS = {
+      validate = true,
+      lint = {
+        cssConflict = "warning",
+        invalidApply = "error",
+        invalidScreen = "error",
+        invalidVariant = "error",
+        invalidConfigPath = "error",
+      },
+      experimental = {
+        classRegex = {
+          { "tw`([^`]*)", "tw" },
+          { "tw=\"([^\"]*)", "tw" },
+          { "tw={\"([^\"}]*)", "tw" },
+        },
+      },
+    },
+  },
 }
+
 
 }
 
