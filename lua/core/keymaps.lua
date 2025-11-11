@@ -6,4 +6,3 @@ vim.g.maplocalleader = " "
 vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file browser" })
 vim.keymap.set("n", "<leader>f", "<cmd>NvimTreeFocus<CR>", { desc = "Focus file browser" })
 
-
