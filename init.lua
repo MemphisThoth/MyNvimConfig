@@ -9,3 +9,4 @@ require("user.ui")
 
 require("bufferline").setup{}
 
+require("plugin-helpers.conform-options")

@@ -352,9 +352,11 @@ require("lazy").setup({
       desc = "Next Trouble/Quickfix Item",
     },
   },
+},
+{
+  'stevearc/conform.nvim',
+  opts = {},
 }
-
-
 
 })
 
