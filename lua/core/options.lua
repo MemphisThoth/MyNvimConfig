@@ -1,30 +1,40 @@
-vim.opt.number = true		-- Show line numbers
-vim.opt.relativenumber = true	-- Relative line numbers
-vim.opt.cursorline = true	-- Highlight current line
-vim.opt.signcolumn = "yes"	-- Always show sign column
-vim.opt.termguicolors = true	-- Enable true color support
-vim.opt.scrolloff = 8		-- Keep 8 lines above/below cursor
-vim.opt.sidescrolloff = 8	-- Horizontal scroll padding
-vim.opt.wrap = false		-- Disable line wrapping
+-- lua/core/options.lua
 
-vim.opt.tabstop = 4		-- Number of spaces per tab
-vim.opt.shiftwidth = 4		-- Indent size
-vim.opt.expandtab = true	-- Use spaces instead of tab
-vim.opt.smartindent = true	-- Auto-indent new lines
-vim.opt.autoindent = true	-- Copy indent from current line
-vim.opt.backspace = "indent,eol,start" -- Make backspace behave intuitively
+local opt = vim.opt
+local g = vim.g
 
-vim.opt.ignorecase = true	-- Case insensitive search
-vim.opt.smartcase = true	-- unless uppercase is used
-vim.opt.incsearch = true	-- Show matches while typing
-vim.opt.hlsearch = true		-- Highlight all matches
+-- Core editor behavior
+opt.number = true
+opt.relativenumber = true
+opt.cursorline = true
+opt.wrap = false
+opt.scrolloff = 8
+opt.sidescrolloff = 8
 
-vim.opt.swapfile = false	-- Disable swap files
-vim.opt.backup = false		-- Disable backup files
-vim.opt.undofile = true		-- Enable persistent undo
-vim.opt.autoread = true		-- Auto-reload changed files
+-- Indentation
+opt.expandtab = true
+opt.shiftwidth = 2
+opt.tabstop = 2
+opt.smartindent = true
 
-vim.opt.updatetime = 300	-- Faster cursorhold events
-vim.opt.timeoutlen = 500	-- Shorter key sequence timeout
-vim.opt.mouse = "a"		-- Enable mouse support
-vim.opt.clipboard = "unnamedplus" -- Use system clipboard
+-- Search
+opt.ignorecase = true
+opt.smartcase = true
+opt.incsearch = true
+opt.hlsearch = true
+
+-- Files & Backups
+opt.swapfile = false
+opt.backup = false
+opt.undofile = true
+
+-- Perfomance 
+opt.updatetime = 250
+opt.timeoutlen = 400
+
+-- Clipboard
+opt.clipboard = "unnamedplus"
+
+-- Misc
+opt.hidden = true
+opt.completeopt = { "menu", "menuone", "noselect" }
